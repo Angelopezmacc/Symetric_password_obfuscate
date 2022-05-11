@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}
+Signup
+{% endblock %}
+
+{% block content %}
+<h1> Sign Up </h1>
+<form method="get" action="{{ url_for('search')}}">
+  <p><input type="text" name="nickname"></p>
+  <input type="submit" value="Search">
+
+</form>
+{% endblock %}

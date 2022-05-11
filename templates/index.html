@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1> Welcome </h1>
+<form method="get" action="{{ url_for('search')}}">
+  <p><input type="text" name="nickname"></p>
+  <input type="submit" value="Search">
+
+</form>
+{% endblock %}
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="shortcut icon" href="../static/imgs/password.ico">
+  </head>
+  <body>
+      <h1>Probando...</h1>
+      <form method="get" action={ { }}
+  </body>
+</html> -->

@@ -1,7 +1,8 @@
-from flask import Flask,render_template,url_for,redirect
+from flask import Flask,render_template,url_for,redirect,flash,request,jsonify
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import request
+from Crypto.Cipher import AES
 import os
 
 dbdir = "sqlite:///" + os.path.abspath(os.getcwd()) + "/database.db"
@@ -37,17 +38,28 @@ def signup():
 
     return render_template("signup.html")
 
-@app.route("/login", methods = ["GET", "POST"])
+@app.route("/login")
 def login():
     if request.method == "POST":
         user = Users.query.filter_by(username=request.form["username"]).first()
 
         if user and check_password_hash(user.password,request.form["password"]):
-            return "Login correcto"
-        return " Usuario o contraseña incorrectos"
+            data = request.json
+            return jsonify(data)
+            # usuario = request.form.get("username")
+            # return redirect(url_for("foo"))
+        # return request.form
+
+
+
+    #     return " Usuario o contraseña incorrectos"
 
     return render_template("login.html")
-        
+
+@app.route('/foo', methods=['POST']) 
+def foo():
+    data = request.json
+    return jsonify(data)     
 
 
 if __name__ == "__main__":

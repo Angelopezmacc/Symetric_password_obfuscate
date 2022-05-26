@@ -19,7 +19,7 @@ Log In
 
 
 {% endblock %} -->
-<!DOCTYPE html>
+
 <!-- <html>
 <head>
   <meta charset="utf-8">
@@ -38,7 +38,11 @@ Log In
   </form>
 
 </body> -->
-</html>
+
+
+
+<!DOCTYPE html>
+
 
 
 <html lang="es">
@@ -47,12 +51,16 @@ Log In
     <title>Enviar formulario con ajax</title>
 <head>
 <body>
-  <form method="POST" action="{{ url_for('login')}}">
+<!--   <form id="formulario" method="POST" action="{{ url_for('/akalogin')}}">
     <p><input name="username" type="text"></p>
     <p><input name="password" type="password"></p>
     <br><br>
     <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar formulario">
     
+  </form> -->
+  <form id="demo_form">
+  Cuadro de entrada: <input type="text" name="nick_name" />
+  <input type="submit" value="solicitud ajax"/>
   </form>
     <hr>
     <p class="respuesta">

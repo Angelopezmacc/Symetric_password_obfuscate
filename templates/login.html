@@ -1,14 +1,34 @@
-{% extends "base.html" %}
-{% block title %}
-Log In
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX</title>
+    <link rel="shortcut icon" href="../static/imgs/password.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-{% block content %}
-<h1> Log In </h1>
-<form method="post" action="{{ url_for('login')}}">
-  <p><input name="username" type="text"></p>
-  <p><input name="password" type="password"></p>
-  <input type="submit" value="Log In">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
+    <!-- <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script> -->
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/1.9.1/components/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/1.9.1/rollups/md5.js"></script> -->
+<!--     <script type="text/javascript" src="path-to/bower_components/crypto-js/crypto-js.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9/core.js"></script>
+    
+
+</head>
+<body>
+<form id="funciona" method="POST" action="{{ url_for('process')}}">
+  <input type="text" name="username" id ="username">
+  <input type="password" name="password" id ="password">
+
+  <input type="submit" name="funcionaaaaa">
+  
 </form>
-{% endblock %}
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

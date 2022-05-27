@@ -1,16 +1,42 @@
+
+
 {% extends "base.html" %}
 {% block title %}
-Home
+Welcome
 {% endblock %}
-
 {% block content %}
-<h1> Welcome </h1>
-<link rel="shortcut icon" href="../static/imgs/password.ico">
-<h1>Probando...</h1>
-  <script>
-    alert("Texto a mostrar");
-  </script>
+<div class="row">
+  <div>
+      <!-- The title of the page its assigned -->
+      <h1 style="text-align: center;color:red" > SCDS Final Project</h1>
 
-</form>
+      <!-- An image its inserted -->
+      <p style="text-align: center">
+        <img style="text-align: center" src="https://www.softzone.es/app/uploads-softzone.es/2022/03/keepass-contrasenas.jpg" WIDTH=1000 HEIGHT=350 alt = "MACC & UR image" />
+      </p>
+  </div>
+</div>
+<div class="row">
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Welcome!</h4>
+        <p class="card-text">What are you waiting for? Check our GitHub repository</p>
+        <a href="https://github.com/Angelopezmacc/Symetric_password_obfuscate" class="btn btn-primary">Go!</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Account</h4>
+        <p class="card-text">All that you need is an account to share your files! It's free!</p>
+        <a href="{{ url_for('signup') }}" class="btn btn-primary">Sign Up</a>
+    <a href="{{ url_for('login') }}" class="btn btn-primary">Log In</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
